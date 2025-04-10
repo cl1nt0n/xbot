@@ -1,97 +1,67 @@
-# Guida alla Contribuzione
+# Linee guida per contribuire
 
-Grazie per il tuo interesse a contribuire a X.bot! Questo documento fornisce linee guida per contribuire al progetto.
+Grazie per l'interesse a contribuire a X.bot! Questo documento fornisce le linee guida e le best practice per contribuire al progetto.
 
-## Processo di Contribuzione
+## Come contribuire
 
-### 1. Issue
+Ci sono diversi modi per contribuire al progetto X.bot:
 
-Prima di iniziare a lavorare su una nuova funzionalità o correzione:
+1. **Segnalare bug**: Se trovi un bug, controlla prima se è già stato segnalato. Se no, crea una nuova issue con una descrizione dettagliata.
+2. **Suggerire miglioramenti**: Le nuove idee sono sempre benvenute. Apri una issue per discutere del tuo suggerimento.
+3. **Contribuire al codice**: Implementa nuove funzionalità o correggi bug esistenti inviando pull request.
+4. **Migliorare la documentazione**: Aiuta a mantenere la documentazione aggiornata e chiara.
 
-1. Verifica che non esista già un'issue relativa al problema o alla funzionalità su cui vuoi lavorare
-2. Se non esiste, apri una nuova issue che descriva:
-   - Cosa vuoi realizzare
-   - Perché è necessario
-   - Come pensi di implementarlo
+## Processo di sviluppo
 
-### 2. Forking e Branching
+1. **Fork del repository**: Crea un fork del repository principale.
+2. **Crea un branch**: Crea un branch per le tue modifiche (`git checkout -b feature/nome-funzionalita`).
+3. **Implementa le modifiche**: Scrivi il codice seguendo le convenzioni del progetto.
+4. **Testa le modifiche**: Assicurati che il tuo codice funzioni correttamente.
+5. **Commit delle modifiche**: Usa messaggi di commit chiari e descrittivi.
+6. **Push dei cambiamenti**: Invia i cambiamenti al tuo fork.
+7. **Crea una Pull Request**: Apri una PR verso il repository principale.
 
-1. Fai un fork del repository sul tuo account GitHub
-2. Clona il tuo fork in locale: `git clone https://github.com/TUO-USERNAME/xbot.git`
-3. Aggiungi il repository upstream: `git remote add upstream https://github.com/cl1nt0n/xbot.git`
-4. Crea un branch per la tua modifica:
-   - Per nuove funzionalità: `git checkout -b feature/nome-funzionalita`
-   - Per bugfix: `git checkout -b fix/nome-bug`
-   - Per miglioramenti documentazione: `git checkout -b docs/descrizione`
+## Linee guida per il codice
 
-### 3. Sviluppo
+### Stile di codifica
 
-1. Scrivi il codice seguendo le convenzioni di stile del progetto
-2. Assicurati di includere test adeguati
-3. Verifica che tutti i test passino
-4. Aggiungi o aggiorna la documentazione secondo necessità
-
-### 4. Commit
-
-1. Commit frequenti e di piccole dimensioni con messaggi chiari
-2. Formatta i messaggi di commit come segue:
-   ```
-   tipo(ambito): descrizione breve
-   
-   Descrizione dettagliata se necessaria
-   ```
-   
-   Dove `tipo` può essere:
-   - `feat`: nuova funzionalità
-   - `fix`: correzione bug
-   - `docs`: modifiche alla documentazione
-   - `style`: modifiche di formattazione
-   - `refactor`: rifactoring del codice
-   - `test`: aggiunta o correzione di test
-   - `chore`: aggiornamenti di build, configurazioni, ecc.
-
-### 5. Pull Request
-
-1. Assicurati che il tuo branch sia aggiornato: `git pull upstream main`
-2. Risolvi eventuali conflitti di merge
-3. Invia il tuo branch: `git push origin nome-branch`
-4. Vai su GitHub e crea una Pull Request verso il branch `main` del repository principale
-5. Descrivi dettagliatamente le modifiche apportate
-6. Collega la PR all'issue correlata usando le parole chiave (es. "Risolve #123")
-
-## Standard di Codice
-
-### Stile del Codice
-
-- Rispetta il file `.eslintrc.json` e `.prettierrc` del progetto
-- Esegui `npm run lint` prima di inviare il codice
+- Segui lo stile di codifica TypeScript standard.
+- Usa la formattazione fornita da ESLint e Prettier.
+- Mantieni il codice leggibile e ben commentato.
 
 ### Test
 
-- Tutti i nuovi moduli dovrebbero includere test unitari
-- Mantieni la copertura dei test almeno al 70%
-- Esegui `npm test` per verificare che tutti i test passino
+- Scrivi test unitari per le nuove funzionalità.
+- Assicurati che tutti i test passino prima di inviare una PR.
+- Mantieni una copertura del codice adeguata.
 
 ### Documentazione
 
-- Documenta le nuove funzionalità nel codice con commenti JSDoc
-- Aggiorna la documentazione utente quando necessario
-- Tieni aggiornato il README con nuove funzionalità
+- Documenta tutte le nuove funzionalità, metodi pubblici e API.
+- Aggiorna la documentazione esistente quando necessario.
+- Usa JSDoc per documentare il codice.
 
-## Processo di Revisione
+## Pull Request
 
-1. I maintainer del progetto rivedranno la tua PR
-2. Potrebbero richiedere modifiche o chiarimenti
-3. Una volta che la PR soddisfa tutti i criteri, verrà unita al branch principale
+- Fornisci una descrizione chiara di ciò che la PR risolve o implementa.
+- Collega la PR alle issue pertinenti.
+- Assicurati che la PR passi i controlli CI.
+- Sii pronto a rispondere a feedback e a effettuare modifiche se richiesto.
 
-## Comportamento
+## Linee guida per le issue
 
-Tutti i contributori devono rispettare il nostro [Codice di Condotta](CODE_OF_CONDUCT.md).
+- Usa i template forniti quando crei una nuova issue.
+- Fornisci quante più informazioni possibili per aiutare a comprendere il problema.
+- Per i bug, includi:
+  - Passaggi per riprodurre il problema
+  - Comportamento atteso vs comportamento effettivo
+  - Screenshot, se applicabile
+  - Ambiente (OS, browser, versione di X.bot)
 
-## Domande?
+## Licenza
 
-Se hai domande sul processo di contribuzione, puoi:
-- Aprire un'issue con l'etichetta "domanda"
-- Contattare i maintainer direttamente
+Contribuendo al progetto, accetti che il tuo lavoro sarà pubblicato sotto la stessa licenza del progetto.
 
-Grazie per contribuire a X.bot!
+## Contatti
+
+Se hai domande che non sono coperte da queste linee guida, contatta i maintainer del progetto.
