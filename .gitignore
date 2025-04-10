@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+yarn-error.log
+yarn-debug.log
+npm-debug.log
+npm-error.log
+
+# Build
+dist/
+build/
+out/
+.webpack/
+
+# Environment
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+gcp-key.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+
+# Cache
+.eslintcache
+.cache/
+.parcel-cache/
+.next/
+
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
