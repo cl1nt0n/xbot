@@ -1,0 +1,184 @@
+/* Variabili globali */
+:root {
+  /* Colori primari */
+  --color-primary: #5f6cff;
+  --color-primary-light: #8f99ff;
+  --color-primary-dark: #3b4cff;
+  
+  /* Colori secondari */
+  --color-secondary: #6c63ff;
+  --color-secondary-light: #9d96ff;
+  --color-secondary-dark: #4840ff;
+  
+  /* Colori di background */
+  --color-background: #0f1114;
+  --color-surface: #181b20;
+  --color-card: #21242c;
+  
+  /* Colori di testo */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b7c3;
+  --color-text-tertiary: #5e6673;
+  
+  /* Colori di stato */
+  --color-success: #36b37e;
+  --color-warning: #ffab00;
+  --color-error: #ff5630;
+  --color-info: #2684ff;
+  
+  /* Colori del grafico */
+  --color-chart-1: #0bead8;
+  --color-chart-2: #6c63ff;
+  --color-chart-3: #ff8f66;
+  --color-chart-4: #ffdd66;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Dimensioni e bordi */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  
+  /* Ombre */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  
+  /* Transizioni */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+  
+  /* Layout */
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 64px;
+  --titlebar-height: 32px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Stili di base */
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Disabilita highlight del testo sugli elementi cliccabili */
+button, .button, .clickable {
+  user-select: none;
+}
+
+/* Layout di base */
+#root {
+  height: 100%;
+}
+
+/* Bottoni */
+button, .button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-fast);
+  border: none;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 500;
+  
+  &:hover {
+    background-color: var(--color-primary-light);
+  }
+  
+  &:active {
+    background-color: var(--color-primary-dark);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &.btn-secondary {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    
+    &:hover {
+      background-color: lighten(var(--color-surface), 10%);
+    }
+    
+    &:active {
+      background-color: darken(var(--color-surface), 5%);
+    }
+  }
+  
+  &.btn-error {
+    background-color: var(--color-error);
+    
+    &:hover {
+      background-color: lighten(var(--color-error), 10%);
+    }
+    
+    &:active {
+      background-color: darken(var(--color-error), 10%);
+    }
+  }
+}
+
+/* Input */
+input, select, textarea {
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-text-tertiary);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(95, 108, 255, 0.3);
+  }
+}
+
+/* Scrollbar personalizzato */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
