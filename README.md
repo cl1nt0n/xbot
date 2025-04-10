@@ -38,6 +38,62 @@ yarn install
 yarn dev
 ```
 
+## Struttura del Progetto
+
+```
+/
+├── docs/                     # Documentazione
+│   ├── INSTALLAZIONE.md      # Guida all'installazione
+│   └── ARCHITTETTURA.md      # Documentazione dell'architettura
+│
+├── src/                      # Codice sorgente
+│   ├── main/                 # Processo main di Electron
+│   │   ├── index.ts          # Entry point del processo main
+│   │   ├── preload.ts        # Script preload per Electron
+│   │   ├── database/         # Moduli per il database
+│   │   ├── handlers/         # Gestori IPC
+│   │   ├── services/         # Servizi e logica di business
+│   │   │   ├── adapters/     # Adapter specifici per retailer
+│   │   │   ├── browserAutomation.ts  # Automazione del browser
+│   │   │   ├── taskManager.ts        # Gestione delle attività
+│   │   │   ├── proxyManager.ts       # Gestione dei proxy
+│   │   │   └── retailerAdapter.ts    # Factory per gli adapter
+│   │   └── utils/            # Utilità
+│   │       ├── logger.ts     # Logging
+│   │       └── crypto.ts     # Crittografia
+│   │
+│   └── renderer/             # Processo renderer (UI)
+│       ├── index.html        # HTML template
+│       ├── index.tsx         # Entry point React
+│       ├── App.tsx           # Componente App principale
+│       ├── components/       # Componenti React
+│       │   ├── Dashboard/    # Dashboard principale
+│       │   ├── Sidebar/      # Sidebar di navigazione
+│       │   ├── TasksView/    # Vista per la gestione attività
+│       │   └── ProxiesView/  # Vista per la gestione proxy
+│       ├── store/            # Store Redux
+│       │   ├── index.ts      # Configurazione store
+│       │   └── slices/       # Reducer e azioni
+│       └── styles/           # Fogli di stile
+│           └── global.scss   # Stili globali
+│
+├── .gitignore                # File ignorati da Git
+├── package.json              # Dipendenze e script
+├── tsconfig.json             # Configurazione TypeScript
+├── webpack.main.config.js    # Configurazione webpack processo main
+├── webpack.renderer.config.js# Configurazione webpack renderer
+├── .prettierrc               # Configurazione Prettier
+└── .eslintrc.json           # Configurazione ESLint
+```
+
+## Componenti Principali
+
+1. **Browser Automation**: Gestisce l'automazione del browser per il monitoraggio e l'acquisto dei prodotti
+2. **Task Manager**: Coordina l'esecuzione delle attività di monitoraggio e checkout
+3. **Proxy Manager**: Gestisce i proxy, i test di latenza e la rotazione
+4. **Retailer Adapters**: Implementazioni specifiche per ogni retailer supportato
+5. **Dashboard**: Interfaccia utente per monitorare e gestire le attività
+
 ## Documentazione
 
 Per ulteriori informazioni sull'architettura e l'implementazione, consulta i documenti nella cartella `docs/`.
