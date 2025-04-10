@@ -1,96 +1,86 @@
-# Guida alla Contribuzione
+# Guida al Contributo per X.bot
 
-Grazie per il tuo interesse a contribuire a X.bot! Questo documento fornisce le linee guida per partecipare al progetto.
+Grazie per il tuo interesse a contribuire a X.bot! Questo documento fornisce le linee guida per contribuire al progetto.
 
-## Come Contribuire
+## Come posso contribuire?
 
-### Segnalazione di Bug
+### Segnalando Bug
 
-I bug rappresentano una parte importante del miglioramento di X.bot. Per segnalare un bug:
+I bug sono una realtà inevitabile nello sviluppo software. Ti ringraziamo per averli segnalati! Ecco come procedere:
 
-1. Verifica che il bug non sia già stato segnalato cercando tra le issue esistenti
-2. Utilizza il template di segnalazione bug fornito
-3. Descrivi in modo chiaro il problema, includendo passaggi per riprodurlo
-4. Fornisci dettagli sul tuo ambiente (sistema operativo, versione di X.bot, ecc.)
-5. Se possibile, includi screenshot o registrazioni che dimostrino il bug
+1. **Verifica che il bug non sia già stato segnalato** controllando le [Issues](https://github.com/cl1nt0n/xbot/issues) esistenti.
+2. **Utilizza il template per i bug** quando apri una nuova issue.
+3. **Fornisci informazioni dettagliate** come:
+   - Passaggi per riprodurre il problema
+   - Comportamento atteso vs. comportamento osservato
+   - Screenshot o registrazioni quando possibile
+   - Ambiente (sistema operativo, versione di X.bot, ecc.)
 
-### Suggerimenti per Nuove Funzionalità
+### Suggerendo Miglioramenti
 
-I suggerimenti per nuove funzionalità sono sempre benvenuti. Per proporre una nuova funzionalità:
+Hai un'idea per migliorare X.bot? Siamo tutto orecchi!
 
-1. Descrivi chiaramente la funzionalità proposta
-2. Spiega perché questa funzionalità sarebbe utile per gli utenti di X.bot
-3. Considera se la funzionalità può essere implementata come estensione esterna
-4. Specifica se sei disposto a contribuire all'implementazione
+1. **Verifica che il miglioramento non sia già stato suggerito** controllando le issue esistenti.
+2. **Descrivi in dettaglio la tua proposta**, specificando:
+   - Problema che risolve
+   - Come funzionerebbe la feature
+   - Perché sarebbe utile per la maggior parte degli utenti
 
-### Pull Request
+### Pull Requests
 
-Per contribuire con codice al progetto:
+Vuoi contribuire direttamente al codice? Ecco come procedere:
 
-1. Forka il repository
-2. Crea un branch per la tua modifica (`git checkout -b feature/amazing-feature`)
-3. Committi i tuoi cambiamenti (`git commit -m 'Aggiunta una funzionalità incredibile'`)
-4. Pusha il branch (`git push origin feature/amazing-feature`)
-5. Apri una Pull Request
+1. **Forka il repository e crea un branch** dal branch `main`.
+2. **Implementa le tue modifiche** seguendo le linee guida di stile del codice.
+3. **Scrivi o aggiorna i test** necessari.
+4. **Verifica che tutti i test passino**.
+5. **Aggiorna la documentazione** se necessario.
+6. **Crea la pull request** utilizzando il template fornito.
 
-## Processo di Sviluppo
+## Processo di sviluppo
 
-### Setup dell'Ambiente di Sviluppo
+### Branching Strategy
 
-```bash
-# Clona il repository
-git clone https://github.com/cl1nt0n/xbot.git
-cd xbot
+Utilizziamo un modello di branching basato su feature:
 
-# Installa le dipendenze
-npm install
+- `main`: Versione stabile e rilasciata
+- `develop`: Branch di sviluppo principale
+- `feature/*`: Per nuove funzionalità
+- `bugfix/*`: Per correzioni di bug
+- `hotfix/*`: Per correzioni urgenti su produzione
 
-# Esegui in modalità sviluppo
-npm run dev
-```
+### Stile del Codice
 
-### Standard di Codice
-
-X.bot segue standard di codice specifici per garantire coerenza e qualità:
-
-- Utilizziamo ESLint e Prettier per la formattazione del codice
-- Seguiamo le pratiche di programmazione funzionale quando possibile
-- Manteniamo una copertura di test adeguata (minimo 80%)
-- Documentiamo il codice utilizzando JSDoc
+- **TypeScript**: Segui le best practice di TypeScript e utilizza i tipi appropriati.
+- **ESLint**: Assicurati che il tuo codice passi le verifiche di ESLint.
+- **Prettier**: Formatta il codice con Prettier per mantenere uno stile coerente.
+- **Documentazione**: Documenta tutte le funzioni pubbliche e le classi.
 
 ### Test
 
-Prima di inviare una pull request, assicurati che tutti i test passino:
+- **Unit Test**: Scrivi test unitari per tutte le nuove funzionalità.
+- **Integration Test**: Aggiungi test di integrazione quando necessario.
+- **Coverage**: Mantieni una copertura dei test adeguata.
 
-```bash
-# Esegui i test unitari
-npm run test
+## Linee guida per i commit
 
-# Esegui i test end-to-end
-npm run test:e2e
-```
+- Utilizza messaggi di commit descrittivi che seguono il formato: `tipo(scope): descrizione`
+- Tipi comuni: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+- Mantieni i commit atomici (un commit per ogni cambiamento logico)
 
-## Revisione del Codice
+## Configurazione dell'ambiente di sviluppo
 
-Ogni contributo verrà rivisto dai maintainer del progetto. Durante la revisione:
+1. Clona il repository
+2. Installa le dipendenze: `npm install`
+3. Configura le variabili d'ambiente secondo `.env.example`
+4. Avvia l'applicazione in modalità sviluppo: `npm run dev`
 
-- I revisori potrebbero richiedere modifiche
-- La copertura dei test verrà valutata
-- La conformità agli standard di codice verrà verificata
-- La documentazione sarà controllata
+## Risorse aggiuntive
 
-## Community
+- [Documentazione API](./docs/api.md)
+- [Architettura del progetto](./docs/architecture.md)
+- [Piano di implementazione](./docs/implementation-plan.md)
 
-### Canali di Comunicazione
+---
 
-- **GitHub Issues**: Per bug e richieste di funzionalità
-- **Discord**: Per discussioni generali e supporto
-- **Twitter**: Per annunci e aggiornamenti
-
-### Comportamento Atteso
-
-Tutti i contributori devono seguire il nostro [Codice di Condotta](CODE_OF_CONDUCT.md).
-
-## Licenza
-
-Contribuendo a X.bot, accetti che il tuo contributo sarà concesso in licenza secondo i termini del [documento di licenza](LICENSE) del progetto.
+Grazie per dedicare il tuo tempo a X.bot. Ogni contributo, grande o piccolo, è molto apprezzato!
