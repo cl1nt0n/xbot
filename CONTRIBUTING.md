@@ -1,97 +1,96 @@
-# Linee Guida per Contribuire
+# Guida alla Contribuzione
 
-Grazie per il tuo interesse a contribuire a X.bot! Questo documento fornisce linee guida e istruzioni per partecipare al progetto.
+Grazie per il tuo interesse a contribuire a X.bot! Questo documento fornisce le linee guida per partecipare al progetto.
 
-## Come Posso Contribuire?
+## Come Contribuire
 
-### Segnalare Bug
+### Segnalazione di Bug
 
-I bug sono tracciati come [issues su GitHub](https://github.com/cl1nt0n/xbot/issues). Prima di creare una segnalazione di bug, verifica se il problema è già stato segnalato. Quando crei una segnalazione di bug, segui il modello fornito e includi:
+I bug rappresentano una parte importante del miglioramento di X.bot. Per segnalare un bug:
 
-- Un titolo chiaro e descrittivo
-- Passaggi dettagliati per riprodurre il problema
-- Comportamento atteso vs. comportamento osservato
-- Screenshot se applicabili
-- Informazioni di sistema (OS, browser, versione di X.bot)
+1. Verifica che il bug non sia già stato segnalato cercando tra le issue esistenti
+2. Utilizza il template di segnalazione bug fornito
+3. Descrivi in modo chiaro il problema, includendo passaggi per riprodurlo
+4. Fornisci dettagli sul tuo ambiente (sistema operativo, versione di X.bot, ecc.)
+5. Se possibile, includi screenshot o registrazioni che dimostrino il bug
 
-### Suggerire Miglioramenti
+### Suggerimenti per Nuove Funzionalità
 
-I miglioramenti vengono tracciati come [issues su GitHub](https://github.com/cl1nt0n/xbot/issues). Prima di creare un suggerimento, verifica se il miglioramento è già stato proposto. Quando suggerisci un miglioramento, includi:
+I suggerimenti per nuove funzionalità sono sempre benvenuti. Per proporre una nuova funzionalità:
 
-- Un titolo chiaro e descrittivo
-- Una descrizione dettagliata del miglioramento proposto
-- Spiegazione dei benefici
-- Possibile implementazione se ne hai una in mente
+1. Descrivi chiaramente la funzionalità proposta
+2. Spiega perché questa funzionalità sarebbe utile per gli utenti di X.bot
+3. Considera se la funzionalità può essere implementata come estensione esterna
+4. Specifica se sei disposto a contribuire all'implementazione
 
 ### Pull Request
 
+Per contribuire con codice al progetto:
+
 1. Forka il repository
-2. Crea un branch dal `main`
-3. Implementa i tuoi cambiamenti
-4. Assicurati che il codice segua le linee guida di stile
-5. Aggiungi test che verificano il tuo codice
-6. Aggiorna la documentazione se necessario
-7. Crea la pull request
+2. Crea un branch per la tua modifica (`git checkout -b feature/amazing-feature`)
+3. Committi i tuoi cambiamenti (`git commit -m 'Aggiunta una funzionalità incredibile'`)
+4. Pusha il branch (`git push origin feature/amazing-feature`)
+5. Apri una Pull Request
 
-## Setup dell'Ambiente di Sviluppo
+## Processo di Sviluppo
 
-1. Clona il repository
-   ```
-   git clone https://github.com/your-username/xbot.git
-   cd xbot
-   ```
+### Setup dell'Ambiente di Sviluppo
 
-2. Installa le dipendenze
-   ```
-   npm install
-   ```
+```bash
+# Clona il repository
+git clone https://github.com/cl1nt0n/xbot.git
+cd xbot
 
-3. Configura l'ambiente di sviluppo
-   ```
-   npm run setup-dev
-   ```
+# Installa le dipendenze
+npm install
 
-4. Esegui i test
-   ```
-   npm test
-   ```
+# Esegui in modalità sviluppo
+npm run dev
+```
 
-## Linee Guida per lo Stile del Codice
+### Standard di Codice
 
-### JavaScript/TypeScript
+X.bot segue standard di codice specifici per garantire coerenza e qualità:
 
-- Usa TypeScript dove possibile
-- Segui le regole ESLint configurate nel progetto
-- Usa camelCase per variabili e funzioni, PascalCase per classi e interfacce
-- Scrivi commenti per codice complesso o non intuitivo
-
-### CSS/SCSS
-
-- Segui la metodologia BEM per la nomenclatura delle classi
-- Organizza il CSS in componenti modulari
-- Evita selettori ID per lo styling
+- Utilizziamo ESLint e Prettier per la formattazione del codice
+- Seguiamo le pratiche di programmazione funzionale quando possibile
+- Manteniamo una copertura di test adeguata (minimo 80%)
+- Documentiamo il codice utilizzando JSDoc
 
 ### Test
 
-- Scrivi test unitari per la logica di business
-- Scrivi test d'integrazione per le interazioni tra componenti
-- Mantieni una copertura di test alta
+Prima di inviare una pull request, assicurati che tutti i test passino:
 
-## Processo di Revisione del Codice
+```bash
+# Esegui i test unitari
+npm run test
 
-Ogni pull request verrà revisionata da almeno un maintainer del progetto. Durante la revisione:
+# Esegui i test end-to-end
+npm run test:e2e
+```
 
-- Controlla la qualità del codice
-- Verifica che i test passino
-- Assicura che la documentazione sia aggiornata
-- Valuta se il cambiamento è allineato con gli obiettivi del progetto
+## Revisione del Codice
+
+Ogni contributo verrà rivisto dai maintainer del progetto. Durante la revisione:
+
+- I revisori potrebbero richiedere modifiche
+- La copertura dei test verrà valutata
+- La conformità agli standard di codice verrà verificata
+- La documentazione sarà controllata
 
 ## Community
 
-Seguiamo il [Codice di Condotta](CODE_OF_CONDUCT.md). Partecipando, ti aspettiamo che lo rispetti.
+### Canali di Comunicazione
 
-## Domande?
+- **GitHub Issues**: Per bug e richieste di funzionalità
+- **Discord**: Per discussioni generali e supporto
+- **Twitter**: Per annunci e aggiornamenti
 
-Se hai domande sul come contribuire, sentiti libero di aprire un'issue con la tua domanda o contattare direttamente i maintainer.
+### Comportamento Atteso
 
-Grazie per contribuire a X.bot!
+Tutti i contributori devono seguire il nostro [Codice di Condotta](CODE_OF_CONDUCT.md).
+
+## Licenza
+
+Contribuendo a X.bot, accetti che il tuo contributo sarà concesso in licenza secondo i termini del [documento di licenza](LICENSE) del progetto.
